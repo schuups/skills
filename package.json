@@ -1,0 +1,10 @@
+{
+  "name": "schups-claude-skills",
+  "version": "1.0.0",
+  "description": "Personal Claude Code skills collection",
+  "private": true,
+  "claude": {
+    "type": "plugin",
+    "skills": "./skills"
+  }
+}
