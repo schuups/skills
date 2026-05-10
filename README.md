@@ -25,10 +25,10 @@ claude plugin marketplace add https://github.com/schuups/skills
 
 ```bash
 # Family-oriented skills
-claude plugin install family-skills@schups-skills
+claude plugin install --scope project family-skills@schups-skills
 
 # Technology-oriented skills
-claude plugin install technology-skills@schups-skills
+claude plugin install --scope project technology-skills@schups-skills
 ```
 
 ### Updating
