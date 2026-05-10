@@ -7,6 +7,8 @@ description: 'Generates printable exercise sheets for Quentin (4th grade, Zurich
 
 Generates structured, printable exercise sheets for Quentin (born 2016, 4th grade Zurich). Sheets are completed on paper; photos of completed sheets can be submitted for correction in a separate session.
 
+**Language rule:** All communication with the parent is in English. All content on the sheet addressed to Quentin is in Hochdeutsch.
+
 **Curriculum basis:** Lehrplan 21 (Kanton Zürich), Zyklus 2 (grades 3–6). Orientation point at end of 4th grade. See Subject Guidelines for competency areas per subject.
 
 ---
@@ -35,10 +37,10 @@ At any point the parent may share a PDF of the semester goals communicated by th
 
 1. **Extract and summarise:** list the stated goals per subject and any indicated timeline (e.g. "fractions by mid-semester", "Aufsatz types by end of term")
 2. **Prioritise the session plan:** use the semester goals to weight which topics to focus on. If a test is approaching for a topic that appears in the semester goals, treat it as high priority
-3. **Flag gaps:** if a goal mentions a topic not yet covered in any previous session described by the parent, surface it: "Die Semesterziele erwähnen [Thema] — wollen wir das priorisieren?"
+3. **Flag gaps:** if a goal mentions a topic not yet covered in any previous session described by the parent, surface it in English: "The semester goals mention [topic] — should we prioritise this?"
 4. **Update context:** keep the semester goals active in the current session so exercise choices align with what the teacher has indicated matters
 
-If no PDF has been shared and the parent hasn't mentioned semester goals, ask once per new subject area whether a semester goal document exists: "Hat die Lehrperson Semesterziele oder einen Themenplan für [Fach] mitgeteilt?"
+If no PDF has been shared and the parent hasn't mentioned semester goals, ask once per new subject area: "Has the teacher shared semester goals or a topic plan for [subject]?"
 
 ---
 
@@ -88,65 +90,91 @@ Total: 8–12 exercises depending on subject and complexity.
 
 ## Print Format
 
-Use this template for every sheet. Generate clean Markdown — it prints directly from a browser or can be pasted into a document.
+Generate a self-contained HTML file. Do not generate Markdown. The HTML must print cleanly to PDF from a browser without any manual adjustments.
 
-```
-# [Fach] – [Thema]
-**Name:** _________________________________   **Datum:** _______________
+**Required CSS rules — include verbatim in `<style>`:**
 
----
-
-## Methode
-
-[Step-by-step method reminder — max 6 steps. Quentin reads this before starting.
-Hochdeutsch. Numbered steps for maths; bullet points for language rules.]
-
----
-
-### Warm-up (ca. 5 Minuten)
-
-**Aufgabe 1**
-[Exercise text]
-
-Antwort: _____________________________________________
-
-**Aufgabe 2**
-[Exercise text]
-
-Antwort: _____________________________________________
-
----
-
-### Hauptteil (ca. 20 Minuten)
-
-**Aufgabe 3**
-[Exercise text]
-
-Lösung (alle Schritte zeigen):
-
-_____________________________________________
-_____________________________________________
-_____________________________________________
-
-**Aufgabe 4 – Fehleranalyse**
-[see Fehleranalyse format below]
-
----
-
-### Herausforderung (ca. 5 Minuten)
-
-**Aufgabe N**
-[Advanced exercise]
-
-Lösung:
-_____________________________________________
-_____________________________________________
-_____________________________________________
-_____________________________________________
-_____________________________________________
+```css
+@page { margin: 2cm 2.5cm; }
+body { font-family: Arial, sans-serif; font-size: 12pt; line-height: 1.6; color: #111; }
+h1 { font-size: 14pt; margin-bottom: 0.3em; }
+.meta { margin-bottom: 1.8em; }
+.meta span { border-bottom: 1px solid #444; display: inline-block; min-width: 10em; }
+.hint { border-left: 3px solid #999; padding: 0.3em 0.8em; margin: 0 0 1.8em;
+        font-style: italic; color: #555; page-break-inside: avoid; }
+.section { font-weight: bold; border-bottom: 1.5px solid #333; margin: 1.6em 0 0.9em;
+           padding-bottom: 0.2em; page-break-after: avoid; }
+.exercise { margin-bottom: 1.6em; page-break-inside: avoid; }
+.ex-text  { margin-bottom: 0.5em; }
+.line     { border-bottom: 1px solid #bbb; min-height: 1.9em; margin: 0.35em 0;
+            width: 100%; display: block; box-sizing: border-box; }
+.fehler   { background: #f5f5f5; border: 1px solid #ccc; padding: 0.6em 1em;
+            page-break-inside: avoid; margin-bottom: 1.6em; }
 ```
 
-**Spacing guide:** warm-up: 1 line | Hauptteil: 3–4 lines | challenge: 5–6 lines | Fehleranalyse explanation: 2 lines
+**Layout rules — do not deviate:**
+- Every exercise is wrapped in `<div class="exercise">` — this prevents exercises from splitting across pages
+- Answer spaces are `<div class="line"></div>` elements — full-width, never table cells or columns
+- Section headers have `page-break-after: avoid` — they never appear alone at the bottom of a page
+- Use 1 `.line` for warm-up answers, 3–4 for Hauptteil, 5–6 for the challenge
+- Never use a two-column layout for exercise content
+
+**Sheet structure:**
+
+```html
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8">
+<style>/* paste CSS above */</style></head><body>
+
+<h1>[Fach] – [Thema]</h1>
+<div class="meta">
+  Name: <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  &nbsp;&nbsp;&nbsp;
+  Datum: <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+</div>
+
+<div class="hint">💡 [Denkanstoß — see below]</div>
+
+<div class="section">Warm-up (ca. 5 Minuten)</div>
+
+<div class="exercise">
+  <div class="ex-text"><strong>Aufgabe 1</strong><br>[text]</div>
+  <div class="line"></div>
+</div>
+
+<div class="section">Hauptteil (ca. 20 Minuten)</div>
+
+<div class="exercise">
+  <div class="ex-text"><strong>Aufgabe N</strong><br>[text]</div>
+  <div class="line"></div><div class="line"></div><div class="line"></div>
+</div>
+
+<!-- Fehleranalyse: use <div class="fehler"> -->
+
+<div class="section">Herausforderung (ca. 5 Minuten)</div>
+
+<div class="exercise">
+  <div class="ex-text"><strong>Aufgabe N</strong><br>[text]</div>
+  <div class="line"></div><div class="line"></div><div class="line"></div>
+  <div class="line"></div><div class="line"></div>
+</div>
+
+</body></html>
+```
+
+---
+
+## Denkanstoß (replaces step-by-step Methode)
+
+Include one **Denkanstoß** per sheet — a single question in Hochdeutsch that nudges Quentin toward the right kind of thinking without revealing the method or the steps. The aha! moment must come from him.
+
+**Rules:** one sentence, a question not a procedure, does not name the method or its steps.
+
+**Examples:**
+- Written multiplication: *Was kannst du berechnen, wenn du eine Zahl immer wieder addierst?*
+- Written division: *Was ist das Gegenteil von Multiplizieren?*
+- Word problem: *Was weisst du? Was suchst du?*
+- German articles: *Welche Frage stellst du, um den Artikel herauszufinden?*
+- Sentence construction: *Wie viele verschiedene Ideen stecken in diesem Satz?*
 
 ---
 
@@ -177,8 +205,9 @@ A correct answer without explanation is not full credit.
 1. Identify subject, topic, and any constraints (upcoming test date, semester goals, specific weak areas)
 2. Check if semester goals have been shared — if yes, align exercise selection
 3. Design the three-block session appropriate to the subject and topic
-4. Generate the sheet in print format
-5. After the sheet, add a **Hinweis für den Elternteil** block (clearly separated, not printed). Include: what the session targets, what to watch for as Quentin works, and a suggested topic for the next session
+4. Generate the exercise HTML file
+5. Spawn a verification agent (see **Verification Agent** section below)
+6. After the sheet, add a brief note to the parent in English (not part of the printable sheet): what the session targets and a suggested topic for the next session
 
 ---
 
@@ -200,38 +229,67 @@ A correct answer without explanation is not full credit.
 
 Open the sheet with: *"Dieses Übungsblatt basiert auf deiner letzten Prüfung. Wir üben genau das, was noch nicht geklappt hat."*
 
+**Step 4 — Spawn a verification agent** (see **Verification Agent** section below).
+
+---
+
+## Verification Agent
+
+After generating any exercise sheet, spawn a subagent to solve every exercise. This validates that each exercise is solvable as written and produces a reference answer key.
+
+Subagent prompt:
+> Read the exercise HTML at [path]. Solve every exercise fully and correctly. For Maths show all intermediate steps. For language exercises provide the complete correct answer with articles and punctuation. For Fehleranalyse write the full model explanation sentence. If any exercise is ambiguous, unsolvable, or inconsistent with Quentin's level, flag it clearly. Save the solutions as [path-solutions.html] using the same HTML/CSS structure with answers in `<div style="color:#060">`.
+
+If the verification agent flags a problem with an exercise, revise it before delivering anything to the parent.
+
 ---
 
 ## Mode C: Correct Completed Sheet
 
-Assess every exercise on three dimensions:
+Assess every exercise on four dimensions:
 
 | Dimension | What it checks |
 |-----------|---------------|
 | **Richtigkeit** | Is the answer correct? |
 | **Methode** | Were intermediate steps shown and the right approach used? A correct answer without working is noted. |
 | **Darstellung** | Legible, aligned, tidy? |
+| **Sprache** | Grammar, punctuation, and sentence structure — see rules below |
+
+**Sprache / Stil / Präzision — apply to all written answers:**
+
+*Grammar and punctuation:*
+- **Satzende:** every sentence must close with a Punkt, Fragezeichen, or Ausrufezeichen. Missing end punctuation is always flagged.
+- **Satzanfang:** every sentence begins with a capital letter.
+- **Satzlänge:** Quentin's known habit is to write everything in one long sentence without breaks. Any answer containing multiple ideas or clauses that should be separate sentences must be flagged explicitly: *"Dieser Satz enthält mehrere Ideen — bitte in [N] Sätze aufteilen."*
+- **Komma:** flag missing commas before subordinate clauses (*weil, dass, wenn, obwohl, der/die/das* as relative pronouns) and between list items.
+- **Vollständigkeit:** answers must be complete sentences with subject and predicate where the exercise requires it.
+
+*Writing style:*
+- **Lesbarkeit:** answers must be easy to read at first pass. Flag sentences that are convoluted, inverted without reason, or require re-reading to understand.
+- **Ordnung:** handwritten answers must be legible and organised. Words must not run together; lines must be respected.
+
+*Precision:*
+- **Einheiten:** a numeric answer without its unit is wrong when the exercise involves a quantity (time, weight, length, money, etc.). "45" is not an acceptable answer to a question asking for minutes — "45 Minuten" is. Flag as ✗, not ≈.
+- **Vollständige Antwort:** for word problems, a bare calculation result is not a full answer. The answer must be a complete sentence stating what was asked: *"Es dauert 45 Minuten."*
 
 Format per exercise:
 ```
-### Aufgabe [N]
+Aufgabe [N]
 - Richtigkeit:   ✓ / ✗ / ≈ (teilweise richtig)
 - Methode:       gezeigt / nicht gezeigt / unvollständig
 - Darstellung:   ordentlich / unordentlich / unleserlich
-- Kommentar:     [Specific: what was right, what was wrong, what to fix]
+- Sprache:       korrekt / [specific issue, e.g. "kein Punkt am Satzende", "fehlendes Komma vor 'weil'", "alles in einem Satz — bitte in 3 Sätze aufteilen"]
+- Kommentar:     [What was right, what was wrong, what to fix]
 ```
 
-End with:
+End with a summary in English for the parent:
 ```
----
-## Zusammenfassung
-
-**Gut gemacht:**    [Specific — not generic praise]
-**Zu verbessern:** [Max 3 points — specific and actionable]
-**Nächste Sitzung:** [Suggested focus]
+What went well: [specific]
+To work on:     [max 3 points, specific and actionable]
+Next session:   [suggested focus]
 ```
 
-Recurring errors: flag with *"Dieser Fehler ist bereits einmal aufgetreten — beim nächsten Mal besonders aufpassen."*
+Recurring errors: flag with *"Dieser Fehler ist bereits einmal aufgetreten."*
 
 ---
 
@@ -265,10 +323,10 @@ Recurring errors: flag with *"Dieser Fehler ist bereits einmal aufgetreten — b
 - Word problems (Textaufgaben): must follow the three-step format:
   - *Gegeben:* what do we know?
   - *Gesucht / Rechnung:* what do we calculate? (show all steps)
-  - *Antwort:* full sentence with correct unit
+  - *Antwort:* full sentence with correct unit — a bare number without unit is always wrong
 
 **Exercise guidelines:**
-- The method box is mandatory for every written algorithm — show each step of the procedure
+- The Denkanstoß (not a step-by-step method) precedes every exercise set — see Denkanstoß section
 - Intermediate steps required; bare answers earn a correction note
 - Warm-ups: Kopfrechnen — 3–5 fast problems, one per line, no working needed
 
@@ -354,13 +412,16 @@ NMG integrates natural science, social science, history, geography, and civic ed
 
 ## Quality Checklist
 
-Before outputting the sheet:
+Before delivering the sheet:
 - [ ] All Quentin-facing text in Hochdeutsch (except English exercises)
+- [ ] All communication to the parent is in English
 - [ ] Every noun in model answers has the correct article
 - [ ] Every plural form is correct
-- [ ] Methode box present and placed before the first exercise
+- [ ] Denkanstoß present — one guiding question, not a step-by-step procedure
 - [ ] At least one Fehleranalyse exercise in the Hauptteil
 - [ ] Herausforderung is genuinely harder than the Hauptteil
-- [ ] Answer lines give adequate space (Maths: 3–4 lines for working; language: 1–2 lines per answer)
-- [ ] Exercise numbers formatted consistently throughout
+- [ ] Every exercise wrapped in `<div class="exercise">` with `page-break-inside: avoid`
+- [ ] Answer areas are full-width `.line` divs — no table cells, no narrow columns
+- [ ] Answer areas sized correctly: 1 line warm-up, 3–4 lines Hauptteil, 5–6 lines challenge
+- [ ] Verification agent spawned and solutions file generated
 - [ ] Session fits 30 minutes (not overloaded)
