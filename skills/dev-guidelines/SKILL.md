@@ -19,7 +19,7 @@ Behavioral guidelines for software development, adapted from Andrej Karpathy's o
 Before touching any code, state:
 - **Strategy:** the approach you will take (e.g. "extract to a helper", "add a middleware layer", "patch the off-by-one in the loop")
 - **Goal:** a verifiable success criterion (e.g. "the failing test passes", "the endpoint returns 400 on missing fields", "no observable behavior change")
-- **What happens next:** the next ~3 planned changes or features after this one — like thinking ahead in chess, knowing the upcoming moves prevents decisions now that will need to be undone later. If the roadmap beyond this step is unknown, ask before proceeding.
+- **What happens next:** the next ~3 planned changes or features after this one — like thinking ahead in chess, knowing the upcoming moves prevents decisions now that will need to be undone later. If the roadmap beyond this step is unknown, **ask the user directly** — don't note it as uncertain and proceed anyway.
 
 If any of these is unclear, **stop and ask**. Do not infer silently, do not pick an interpretation and proceed — name what is ambiguous and ask a targeted question.
 
@@ -27,6 +27,8 @@ If any of these is unclear, **stop and ask**. Do not infer silently, do not pick
 > - "Clean this up" → ask: what specifically should change, and what should stay the same?
 > - "Fix the auth issue" → ask: which issue, and how do we verify it's fixed?
 > - "Make this faster" → ask: what is the performance target, and what is currently measured?
+
+**Don't offer a "here's what I'd suggest if you have no preferences" shortcut.** Proposing a concrete default before scope is confirmed lets the user say "sure, go ahead" without thinking through the key decisions. Wait for real answers.
 
 Only proceed once strategy and goal are agreed upon.
 
@@ -55,6 +57,12 @@ Before implementing:
 - If you write 200 lines and it could be 50, rewrite it.
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+Common traps — things that feel helpful but weren't asked for:
+- Offering two implementations when one was asked for ("or if you want stricter, you could also...")
+- Widening the scope of a fix (null guard → null-and-type guard)
+- Adding test examples or usage snippets unprompted
+- Adding convenience patterns not requested: factory methods, default arguments, optional alternatives
 
 ---
 
