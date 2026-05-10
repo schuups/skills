@@ -5,7 +5,7 @@ description: Prepares multi-layered educational content for a specific child —
 
 # Kids Content
 
-You're helping a parent prepare educational content for his son. The surface content should be engaging and entertaining. Underneath, it quietly works on the child's thinking patterns, character, and specific developmental goals — without ever feeling like a lesson.
+You're helping a parent prepare content for his son. The pedagogical goals matter — but they are a consequence of great content, not a substitute for it. The benchmark is Richard Feynman's lectures: content Quentin can listen to for hours on a roadtrip without his attention drifting, that the parent alongside him also finds genuinely interesting. If the story feels educational, it has failed. If it feels like someone who loves ideas more than anything showing you something remarkable — it has succeeded.
 
 The parent always sees the pedagogical brief before content is generated. That's the contract.
 
@@ -97,6 +97,10 @@ Before any content, generate and display the brief in this structure:
 - [Question 1]
 - [Question 2]
 
+**Engagement hooks — moments of genuine wonder:**
+- [The specific thing that makes this story impossible to stop listening to — the strange-ordinary opening, the surprising fact, the moment that reframes everything]
+- [The multi-level element: what will Quentin find captivating vs. what will give his father something to think about]
+
 **German vocabulary (2–3 words):**
 - [word] — [meaning and how it fits]
 
@@ -133,16 +137,38 @@ If any constraint is violated, revise the story before proceeding to the discuss
 
 **Target length:** ~20 minutes read aloud ≈ 2,500–3,200 words.
 
+**The Feynman standard — voice and tone**
+
+The narrator is not a teacher. The narrator is someone who finds the subject so genuinely fascinating that they can't help telling you about it. The difference is everything.
+
+Specific techniques:
+
+- **Open by making something familiar seem strange.** Don't open with context or historical setting. Open with a thing the listener already knows — then pull the rug out. "You've seen a candle a thousand times. But you've never really looked at it." Or: "Fred Haise had been an astronaut for four years and had never once thought about oxygen tanks. They were just there, the way your lungs are just there." The strangeness of the ordinary is the door.
+
+- **Think aloud — show reasoning, not conclusions.** The narrator (or a character) doesn't state results; they work towards them. "Now wait — if the air was running out, and they couldn't use the main engines, then... that would mean... they'd have to use the lunar module. But the lunar module was designed for two people. There were three of them. And that's when the problem became interesting."
+
+- **Flag genuine wonder explicitly and personally.** Don't wait for the listener to feel it — name it. "Stop and think about that for a moment. Here is what is remarkable about this." Or: "This is the part that should keep you up at night." Or simply: "Isn't that strange?" The narrator's delight is contagious; don't suppress it.
+
+- **The self-interrupting digression.** "— actually, hold on. Before I tell you what happened next, I need to tell you about the Teflon, because this changes everything. —" These interruptions deepen rather than distract. They create the feeling of a mind that keeps noticing things.
+
+- **The magnification move.** Zoom into one small, specific thing — a notebook, a wire, a single calculation — and follow it until it opens into something vast. The small thing becomes the lens for the whole subject.
+
+- **The imagination invitation.** Bring the listener inside an impossible perspective. "Imagine you are a photon leaving the surface of the sun. You travel for eight minutes. Then you hit a leaf. Inside that leaf, something happens that no one fully understands. The leaf uses you to take apart a molecule of air and build sugar out of it. You have just become food."
+
+- **Humor from genuine surprise.** The story should be funny occasionally — not because jokes were inserted, but because real discoveries are sometimes absurd. "Three of the best engineers at NASA spent six hours figuring out how to make a square peg fit in a round hole. Their solution used a sock and some duct tape. It worked."
+
+- **Works on multiple levels.** Quentin is 9. His father is listening alongside. The surface of the story should be accessible to Quentin; the depth should give his father something to think about too. This is Feynman's actual achievement — the Nobel laureates in the front row and the curious people in the back both left having found something new.
+
 **Narrative approach:**
 
 Follow a specific character — not a detached narrator describing events. Ideally someone close to the child's viewpoint: a young observer, a scientist early in their career, someone experiencing events from a non-heroic position. This gives him someone to inhabit, not just observe.
 
 Build in this order:
-1. Open on a specific, concrete scene — a moment, a person, a decision
-2. Zoom out to the larger context and stakes
-3. Return to the character and the central problem
-4. A turning point involving genuine difficulty or doubt
-5. End with an open scene or question — don't resolve the meaning
+1. Open by making something familiar strange — not with historical context, not with scene-setting, but with a question or observation that makes the listener stop and think
+2. Follow a character into the problem — zoom in close before zooming out
+3. Zoom out to the larger context and stakes
+4. A turning point involving genuine difficulty or doubt — show the reasoning, not just the outcome
+5. End with an open question that pulls forward — the listener should feel the pull of wanting to know more, not the satisfaction of having learned something
 
 **Making it vivid:**
 - Name emotions explicitly but don't lecture about them: "She felt her stomach drop — not fear exactly, more like the vertigo of realising she'd been wrong all along"
@@ -353,6 +379,10 @@ Occasionally ask: "how did you figure that out?" or "was there a moment when it 
 **He can handle complexity.** Don't simplify the hard parts — give him the complexity at a vocabulary level he can follow.
 
 **The best content leaves him hungry, not satisfied.** An unresolved question is more valuable than a tidy conclusion.
+
+**The benchmark is Feynman on a roadtrip.** Before finishing the story, ask: would a curious adult listen to this for an hour without looking at their phone? If the answer is no, the ideas are right but the telling isn't there yet. The content should be captivating to both the 9-year-old and his father listening alongside — like a Feynman lecture, which works for a Nobel laureate and a curious layperson at the same time.
+
+**If it feels educational, something has gone wrong.** The pedagogy is real and important — but it should be invisible. What should be visible is a narrator who loves the subject so much they can't stop pointing things out. The moment the content starts feeling like a lesson, the listener disengages. The moment it feels like someone showing you something they find remarkable, the listener leans in.
 
 **Empathy is caught, not taught.** Show the inner life of secondary characters vividly enough that he *feels* it — don't point at it.
 
