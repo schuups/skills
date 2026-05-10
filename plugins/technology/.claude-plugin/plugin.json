@@ -1,0 +1,9 @@
+{
+  "name": "technology-skills",
+  "version": "1.0.0",
+  "description": "Software development guidelines — enforces deliberate strategy, surgical edits, and explicit success criteria before any code is written",
+  "author": {
+    "name": "Schups",
+    "email": "schups@gmail.com"
+  }
+}

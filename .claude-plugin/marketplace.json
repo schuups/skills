@@ -1,0 +1,39 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "schups-skills",
+  "description": "Personal Claude Code skills by Schups",
+  "owner": {
+    "name": "Schups",
+    "email": "schups@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "family-skills",
+      "description": "Educational content and exercises for Quentin — audio stories, discussion guides, and printable school exercise sheets",
+      "author": {
+        "name": "Schups"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/schuups/skills.git",
+        "path": "plugins/family",
+        "ref": "main"
+      },
+      "category": "productivity"
+    },
+    {
+      "name": "technology-skills",
+      "description": "Software development guidelines — enforces deliberate strategy, surgical edits, and explicit success criteria before any code is written",
+      "author": {
+        "name": "Schups"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/schuups/skills.git",
+        "path": "plugins/technology",
+        "ref": "main"
+      },
+      "category": "development"
+    }
+  ]
+}
