@@ -1,6 +1,6 @@
-# schuups/skills
+# Schups skills collection
 
-Personal [Claude Code](https://claude.ai/code) skills collection — educational content for family and software development guidelines.
+Personal [Claude Code](https://claude.ai/code) skills collection.
 
 ## Plugins
 
@@ -91,15 +91,17 @@ Generates printable 30-minute exercise sheets for 4th grade schoolwork (Lehrplan
 
 **Three modes:**
 
+**Note:** prompts are written in English — the generated exercise sheets are always in Hochdeutsch (except English subject exercises).
+
 **Mode A — Generate from topic:**
 
 ```
-Quentin hat nächste Woche eine Matheprüfung über schriftliche Multiplikation
-(dreistellig × einstellig). Kannst du ein Übungsblatt erstellen?
+Quentin has a Maths test next week on written multiplication (3-digit × 1-digit).
+Can you create an exercise sheet?
 ```
 
 ```
-Deutsch: Artikel und Pluralformen üben. Er macht da immer noch Fehler.
+Deutsch: practise articles and plural forms — he keeps making mistakes there.
 ```
 
 ```
@@ -110,15 +112,15 @@ Can you create an English exercise sheet on simple present and yes/no questions?
 
 ```
 [photo of graded test attached]
-Quentin hat seinen Deutschtest zurückbekommen. Kannst du die Fehler analysieren
-und ein gezieltes Übungsblatt erstellen?
+Quentin got his Deutsch test back. Can you analyse the mistakes
+and create a targeted exercise sheet?
 ```
 
 **Mode C — Correct a completed sheet (attach photo):**
 
 ```
 [photo of completed exercise sheet attached]
-Kannst du das korrigieren?
+Can you correct this?
 ```
 
 Each exercise is assessed on three dimensions: correctness, method (intermediate steps shown), and presentation (legibility, alignment). A correct answer without working shown is flagged.
@@ -126,6 +128,8 @@ Each exercise is assessed on three dimensions: correctness, method (intermediate
 ---
 
 ### `dev-guidelines`
+
+> Adapted from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) (May 2026).
 
 Enforces deliberate, surgical coding behaviour. Before any code is written, an explicit strategy and verifiable success criterion must be stated. Ambiguous requests are met with a targeted clarifying question, not a default interpretation.
 
